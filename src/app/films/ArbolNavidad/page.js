@@ -50,6 +50,15 @@ padding-bottom: 10vh;
 padding-top: 10vh;
 `
 
+const SubtitleText = styled.p`
+font-family: ${oswald.style.fontFamily};
+color: black;
+z-index: 4;
+font-size: 40px;
+padding-bottom: 5vh;
+padding-top: 5vh;
+`
+
 const SinopsisText = styled.p`
 font-family: ${oswald.style.fontFamily};
 color: black;
@@ -102,6 +111,7 @@ export default function Movie({}) {
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false} isDetails={true}/> 
           <QuoteText >{'Trayectoria del proyecto'}</QuoteText>
           {listOfMovies[index].trayectoria && <SinopsisText >{listOfMovies[index].trayectoria}</SinopsisText>}
+          <SubtitleText >{'Festivales:'}</SubtitleText>
         </SectionSinopsis>}
        
         
