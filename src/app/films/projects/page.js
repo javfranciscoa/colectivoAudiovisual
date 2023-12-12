@@ -1,11 +1,13 @@
 'use client'
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Header from '../../components/Header';
-import {listOfMovies} from '../../api/index'
+import { listOfMovies } from '../../api/index'
 import VideoPlayer from '../../components/VideoPlayer';
 import styled from 'styled-components';
-import { anton, oswald } from '../../utils/fonts/'
+import { anton, oswald } from '../../utils/fonts'
 import { useSearchParams } from 'next/navigation'
+import ImageCarousel from '../../components/ImageCarousel';
+import Footer from '../../components/Footer'
 
 const Container = styled.div`
 position: absolute;
@@ -53,10 +55,10 @@ padding-top: 10vh;
 const SubtitleText = styled.p`
 font-family: ${oswald.style.fontFamily};
 color: black;
-z-index: 4;
-font-size: 40px;
-padding-bottom: 5vh;
-padding-top: 5vh;
+font-size: 20px;
+padding-bottom: 1vh;
+padding-top: 1vh;
+text-align: start;
 `
 
 const SinopsisText = styled.p`
@@ -64,17 +66,40 @@ font-family: ${oswald.style.fontFamily};
 color: black;
 z-index: 4;
 font-size: 20px;
-margin-bottom: 10vh;
+padding-bottom: 5vh;
 `
 
 
 const SectionSinopsis = styled.div`
 text-align: center;
-${ props => !!props.sizeHeigh ?  'margin-top:' + props.sizeHeigh + 'px;' : null  }
+${ props => !!props.sizeHeigh ?  'margin:' + props.sizeHeigh + 'px' + ' 16vw 10vh;' : null  }
 `
 const MainContainer = styled.div`
   background-color: #f1f3f9;
+  width: 100%;
 `
+
+const CrewContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+`
+const Crew = styled.div`
+max-width: 176px;
+margin: 0 50px;
+min-width: 200px;
+`
+const DepartmentTitle = styled.p`
+font-family: ${oswald.style.fontFamily};
+color: rgba(0,0,0,0.31);
+z-index: 4;
+font-size: 20px;`
+const DepartmentDescription = styled.p`font-family: ${oswald.style.fontFamily};
+color: black;
+z-index: 4;
+font-size: 20px;`
+
+
 
 export default function Movie({}) {
   const [sectionTwoHeigh, setSectionTwoHeigh] = useState(null)
@@ -111,10 +136,21 @@ export default function Movie({}) {
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false} isDetails={true}/> 
           <QuoteText >{'Trayectoria del proyecto'}</QuoteText>
           {listOfMovies[index].trayectoria && <SinopsisText >{listOfMovies[index].trayectoria}</SinopsisText>}
-          <SubtitleText >{'Festivales:'}</SubtitleText>
-        </SectionSinopsis>}
-       
-        
+          {/* <SubtitleText >{'Festivales:'}</SubtitleText> */}
+          <QuoteText >{'Ficha técnica'}</QuoteText>
+          <CrewContainer>
+          {listOfMovies[index]?.crew?.length > 0 && listOfMovies[index].crew.map( crew => 
+            <Crew>
+              <DepartmentTitle>{crew.title}</DepartmentTitle>
+              <DepartmentDescription>{crew.description}</DepartmentDescription>
+            </Crew>
+        )} 
+          </CrewContainer>
+        </SectionSinopsis>
+         
+        }
+        <ImageCarousel images={listOfMovies[index]?.carouselImages} />
+        <Footer/>
     </MainContainer>
   );
 }
