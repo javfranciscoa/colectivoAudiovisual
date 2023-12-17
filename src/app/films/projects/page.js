@@ -55,7 +55,7 @@ ${responsiveness}
 const TextContainer = styled.div`
 position: absolute; 
 
-left: calc(50% - ${window.innerWidth * 0.4}px);
+left: calc(50% - ${window?.innerWidth * 0.4}px);
 ${media.extraSmall} {
   top: 30%;
   }
@@ -153,7 +153,7 @@ export default function Movie({}) {
 
   useLayoutEffect(() => {
     if(headerSize?.current?.clientHeight){
-      setSectionTwoHeigh(window.innerHeight / 2 - headerSize?.current?.clientHeight)
+      setSectionTwoHeigh(window?.innerHeight / 2 - headerSize?.current?.clientHeight)
     }
 
   }, [sectionTwoHeigh])
