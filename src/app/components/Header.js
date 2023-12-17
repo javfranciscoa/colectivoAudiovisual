@@ -20,7 +20,7 @@ z-index: 10;
         <Image src={'/logo.png'}  alt={'logo'}  width={200}
         height={65}></Image>
       </div>
-      {window?.innerWidth >= breakpoints.medium ? 
+      {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.medium ? 
       (<div className={styles.menu}>
         <MenuButton text={'Nosotros'} href={'/nosotros'} transparentVideo={transparentVideo} />
         <MenuButton text={'Contacto'} href={'/contacto'} transparentVideo={transparentVideo}/>

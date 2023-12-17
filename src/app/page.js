@@ -46,7 +46,7 @@ export default function Home() {
       <Header transparentVideo={transparentVideo} isHome={true} handleLogoClick={handleLogoClick}/>
     
       <div className={styles.description}>
-        {window?.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
+        {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
        <div className={styles.centeredList}>
        <ul className={styles.list}>
             {listOfMovies.map(( movie, index) => (

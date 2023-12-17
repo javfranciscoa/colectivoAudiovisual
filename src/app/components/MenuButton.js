@@ -12,7 +12,7 @@ const StyledLinkButton = styled(Link)`
 `;
 
 const MenuButton = ({ href, text, transparentVideo }) => {
-    const shouldDissapear = window.innerWidth > breakpoints.xlarge
+    const shouldDissapear = typeof window !== 'undefined' && window.innerWidth > breakpoints.xlarge
   return (
       <StyledLinkButton href={href} transparentvideo={shouldDissapear ? transparentVideo : true}>{text}</StyledLinkButton>
   );
