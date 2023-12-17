@@ -3,7 +3,7 @@ import { useState, forwardRef } from 'react';
 import ReactPlayer from 'react-player';
 import styles from './VideoPlayer.module.css';
 
-const VideoPlayer = forwardRef(({videoUrl, transparentVideo, isHome, isDetails = false}, forwardref) => {
+const VideoPlayer = forwardRef(({videoUrl, transparentVideo = true, isHome, isDetails = false}, forwardref) => {
     const [isPlaying, setIsPlaying] = useState(isDetails ? false : true);
 
     console.log(isDetails, 'is details');

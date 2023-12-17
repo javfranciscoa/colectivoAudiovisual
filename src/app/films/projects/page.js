@@ -8,7 +8,7 @@ import { anton, oswald } from '../../utils/fonts'
 import { useSearchParams } from 'next/navigation'
 import ImageCarousel from '../../components/ImageCarousel';
 import Footer from '../../components/Footer'
-
+import { media } from '../../utils/breakpoints'
 const Container = styled.div`
 position: absolute;
 top: 0;
@@ -18,10 +18,29 @@ height: 50vh;
 width: 100%;
 `;
 
+const responsiveness = `
+
+${media.small} {
+  font-size: 1rem; /* Adjust font size for medium screens */
+  }
+${media.medium} {
+  font-size: 1.2rem; /* Adjust font size for medium screens */
+  }
+  
+  ${media.large}{
+  font-size: 1.5rem; /* Adjust font size for large screens */
+  }
+  
+  ${media.xlarge}{
+  font-size: 2rem; /* Adjust font size for extra-large screens */
+  }`
+
 const Title = styled.h1`
 font-family: ${anton.style.fontFamily};
 color: #fff;
 z-index: 4;
+font-size: 1rem;
+${responsiveness}
 `
 
 const SubTitle = styled.h1`
@@ -29,18 +48,41 @@ font-family: ${oswald.style.fontFamily};
 color: #fff;
 z-index: 4;
 margin-top: 10px;
+font-size: 1rem;
+${responsiveness}
+}
 `
 const TextContainer = styled.div`
 position: absolute; 
-top: 60%;
-left: 20%; 
-transform: translate(-50%, -50%);
-`
+
+left: calc(50% - ${window.innerWidth * 0.4}px);
+${media.extraSmall} {
+  top: 30%;
+  }
+${media.small} {
+  top: 30%;
+  }
+${media.medium} {
+  top: 60%;
+  }
+  
+  ${media.large}{
+    top: 60%;
+  }
+  
+  ${media.xlarge}{
+    top: 60%;
+  }`
+
+
+
 const InfoText = styled.h3`
 font-family: ${oswald.style.fontFamily};
 color: #fff;
 z-index: 4;
 margin-top: 10px;
+font-size: 1rem;
+${responsiveness}
 `
 
 const QuoteText = styled.h3`
@@ -115,6 +157,8 @@ export default function Movie({}) {
     }
 
   }, [sectionTwoHeigh])
+
+  console.log(media)
 
 
   return (

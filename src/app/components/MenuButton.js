@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { breakpoints } from '../utils/breakpoints'
 
 const StyledLinkButton = styled(Link)`
     font-size: 1rem;
@@ -11,9 +12,9 @@ const StyledLinkButton = styled(Link)`
 `;
 
 const MenuButton = ({ href, text, transparentVideo }) => {
-    console.log(transparentVideo, 'imm')
+    const shouldDissapear = window.innerWidth > breakpoints.xlarge
   return (
-      <StyledLinkButton href={href} transparentvideo={transparentVideo}>{text}</StyledLinkButton>
+      <StyledLinkButton href={href} transparentvideo={shouldDissapear ? transparentVideo : true}>{text}</StyledLinkButton>
   );
 };
 
