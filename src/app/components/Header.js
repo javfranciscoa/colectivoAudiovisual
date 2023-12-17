@@ -4,10 +4,12 @@ import Image from 'next/image'
 import MenuButton from './MenuButton'
 import {breakpoints} from '../utils/breakpoints'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
 
-const LogoContainer = styled.div``
+const LogoContainer = styled.div`
+z-index: 10;
+`
 
  const Header = forwardRef(({transparentVideo, isHome, handleLogoClick}, ref) => {
  
@@ -23,8 +25,8 @@ const LogoContainer = styled.div``
         <MenuButton text={'Nosotros'} href={'/nosotros'} transparentVideo={transparentVideo} />
         <MenuButton text={'Contacto'} href={'/contacto'} transparentVideo={transparentVideo}/>
       </div>) : (
-      <LogoContainer className="logo-container" onClick={handleLogoClick}>
-        <FontAwesomeIcon icon={faHamburger} size="2x" className="logo" />
+      <LogoContainer onClick={handleLogoClick}>
+        <FontAwesomeIcon icon={faBars} size="2x" className={styles.logoBurger} />
       </LogoContainer> 
       )}
     </div>

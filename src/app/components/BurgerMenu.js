@@ -7,7 +7,7 @@ const BurgerMenu = ({handleStateChange, menuOpen}) => {
     
   return (
     <>
-    <Menu isOpen={menuOpen} customBurgerIcon={ <FontAwesomeIcon icon={faHamburger} size="0.2x" className="logo" /> } noOverlay right onStateChange={handleStateChange} >
+    <Menu isOpen={menuOpen} customBurgerIcon={ false }  right onStateChange={handleStateChange} >
         
       <a className="menu-item" href="/">
         Home

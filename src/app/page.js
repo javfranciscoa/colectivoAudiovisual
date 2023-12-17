@@ -25,9 +25,10 @@ export default function Home() {
   const handleLogoClick = () => {
     // Add any specific actions you want to perform when the logo is clicked
     // For now, just close the menu
-    closeMenu();
+    console.log(menuOpen, ' i ran');
+    setMenuOpen( prev => !prev)
   };
-  const [transparentVideo, changeTransparent] = useState(false)
+  const [transparentVideo, changeTransparent] = useState(true)
   const handleClick = () => {
 
   }
@@ -45,7 +46,7 @@ export default function Home() {
       <Header transparentVideo={transparentVideo} isHome={true} handleLogoClick={handleLogoClick}/>
     
       <div className={styles.description}>
-        {window.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
+        {window?.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
        <div className={styles.centeredList}>
        <ul className={styles.list}>
             {listOfMovies.map(( movie, index) => (
