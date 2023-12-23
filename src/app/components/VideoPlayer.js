@@ -5,8 +5,6 @@ import styles from './VideoPlayer.module.css';
 
 const VideoPlayer = forwardRef(({videoUrl, transparentVideo = true, isHome, isDetails = false}, forwardref) => {
     const [isPlaying, setIsPlaying] = useState(isDetails ? false : true);
-
-    console.log(transparentVideo, 'is details');
   return (
     <div   ref={forwardref} className={`${isHome && styles.videoPlayer} ${isDetails && styles.containerCenterContent}`}>
       <div className={`${isDetails ? styles.normalPlayer : styles.playerWrapper} ${transparentVideo && styles.transparentVideo}`}>

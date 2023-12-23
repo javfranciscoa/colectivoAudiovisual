@@ -25,7 +25,7 @@ position: absolute;
     font-size: 24px;
     cursor: pointer;
     transform: translateY(-50%);
-    right: 40px;
+    left: 90%;
 
 `
 
@@ -35,7 +35,8 @@ position: absolute;
     font-size: 24px;
     cursor: pointer;
     transform: translateY(-50%) rotate(180deg);
-    left: 40px;
+ 
+    right: 90%;
     z-index: 100;
 `
 const ImageCarousel = ({ images }) => {

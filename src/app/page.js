@@ -8,6 +8,15 @@ import {listOfMovies} from './api/index'
 import Header from './components/Header'
 import {breakpoints} from './utils/breakpoints'
 import BurgerMenu from './components/BurgerMenu';
+import Footer from './components/Footer';
+import styled from 'styled-components';
+
+const FooterContainer = styled.div`
+position: absolute;
+bottom: 0;
+width: 100vw;
+`
+
 
 export default function Home() {
 
@@ -44,7 +53,7 @@ export default function Home() {
     <main className={styles.myMain}>
     <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
       <Header transparentVideo={transparentVideo} isHome={true} handleLogoClick={handleLogoClick}/>
-    
+  
       <div className={styles.description}>
         {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
        <div className={styles.centeredList}>
@@ -59,6 +68,9 @@ export default function Home() {
        </div>
      
       </div>
+      <FooterContainer>
+      <Footer/>
+      </FooterContainer>
     </main>
 
     </div>

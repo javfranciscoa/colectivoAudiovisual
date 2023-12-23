@@ -9,6 +9,8 @@ import { useSearchParams } from 'next/navigation'
 import ImageCarousel from '../../components/ImageCarousel';
 import Footer from '../../components/Footer'
 import { media } from '../../utils/breakpoints'
+import {breakpoints} from '../../utils/breakpoints'
+
 const Container = styled.div`
 position: absolute;
 top: 0;
@@ -92,6 +94,33 @@ z-index: 4;
 font-size: 54px;
 padding-bottom: 10vh;
 padding-top: 10vh;
+${media.extraSmall} {
+  font-size: 20px;
+  padding-bottom: 10%;
+  padding-top: ${(props) => props?.paddingTop ? props?.paddingTop : '0'};
+  }
+${media.small} {
+  font-size: 22px;
+  padding-bottom: 10%;
+  padding-top: ${(props) => props?.paddingTop ? props?.paddingTop : '0'};
+  }
+${media.medium} {
+  font-size: 30px;
+  padding-bottom: 10%;
+  padding-top: ${(props) => props?.paddingTop ? props?.paddingTop : '0'};
+  }
+  
+  ${media.large}{
+    font-size: 40px;
+    padding-bottom: 10%;
+    padding-top: ${(props) => props?.paddingTop ? props?.paddingTop : '10vh'};
+  }
+  
+  ${media.xlarge}{
+    font-size: 54px;
+    padding-bottom: 10%;
+    padding-top: ${(props) => props?.paddingTop ? props?.paddingTop : '10vh'};
+  }
 `
 
 const SubtitleText = styled.p`
@@ -127,9 +156,29 @@ flex-wrap: wrap;
 justify-content: space-between;
 `
 const Crew = styled.div`
-max-width: 176px;
+
+${media.extraSmall} {
+  flex: 0 0 100%;
+  }
+${media.small} {
+  flex: 0 0 100%;
+  }
+${media.medium} {
+  flex: 0 0 100%;
+  }
+  
+  ${media.large}{
+    max-width: 176px;
 margin: 0 50px;
 min-width: 200px;
+  }
+  
+  ${media.xlarge}{
+    max-width: 176px;
+    margin: 0 50px;
+    min-width: 200px;
+  }
+
 `
 const DepartmentTitle = styled.p`
 font-family: ${oswald.style.fontFamily};
@@ -158,9 +207,6 @@ export default function Movie({}) {
 
   }, [sectionTwoHeigh])
 
-  console.log(media)
-
-
   return (
     <MainContainer>
         <Header ref={headerSize} transparentVideo={true} isHome={false}/>
@@ -172,13 +218,13 @@ export default function Movie({}) {
             <InfoText>{listOfMovies[index].info}</InfoText>
           </TextContainer>
         </Container>
-        {!!sectionTwoHeigh && <SectionSinopsis sizeHeigh={sectionTwoHeigh}> 
+        {!!sectionTwoHeigh && <SectionSinopsis sizeHeigh={typeof window !== 'undefined' && window?.innerWidth <= breakpoints.xlarge ?  headerSize?.current?.clientHeight : sectionTwoHeigh}> 
           {listOfMovies[index].quote && <QuoteText >{listOfMovies[index].quote}</QuoteText>
           
           }
           {listOfMovies[index].sinopsis && <SinopsisText >{listOfMovies[index].sinopsis}</SinopsisText>}
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false} isDetails={true}/> 
-          <QuoteText >{'Trayectoria del proyecto'}</QuoteText>
+          <QuoteText paddingTop={20} >{'Trayectoria del proyecto'}</QuoteText>
           {listOfMovies[index].trayectoria && <SinopsisText >{listOfMovies[index].trayectoria}</SinopsisText>}
           {/* <SubtitleText >{'Festivales:'}</SubtitleText> */}
           <QuoteText >{'Ficha técnica'}</QuoteText>

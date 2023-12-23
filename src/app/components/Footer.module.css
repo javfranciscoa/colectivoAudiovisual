@@ -4,8 +4,9 @@
     color: #fff;
     margin: 0 10px;
     transition: color 0.3s ease;
+    z-index: 11;
   }
   
   .icon:hover {
-    color: black;
+    color: #DC8686;
   }
