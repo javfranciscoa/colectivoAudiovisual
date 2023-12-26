@@ -10,7 +10,6 @@ const FooterContainer = styled.footer`
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #F0DBAF;
 padding: 10px;
 height: 10vh;
 `

@@ -10,6 +10,8 @@ import ImageCarousel from '../../components/ImageCarousel';
 import Footer from '../../components/Footer'
 import { media } from '../../utils/breakpoints'
 import {breakpoints} from '../../utils/breakpoints'
+import BurgerMenu from '@/app/components/BurgerMenu';
+
 
 const Container = styled.div`
 position: absolute;
@@ -193,6 +195,12 @@ font-size: 20px;`
 
 
 export default function Movie({}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen);
+  };
+
   const [sectionTwoHeigh, setSectionTwoHeigh] = useState(null)
   const headerSize = useRef(null)
 
@@ -207,9 +215,16 @@ export default function Movie({}) {
 
   }, [sectionTwoHeigh])
 
+  const handleLogoClick = () => {
+    // Add any specific actions you want to perform when the logo is clicked
+    // For now, just close the menu
+    setMenuOpen( prev => !prev)
+  };
+
   return (
     <MainContainer>
-        <Header ref={headerSize} transparentVideo={true} isHome={false}/>
+          <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
+        <Header ref={headerSize} transparentVideo={true} handleLogoClick={handleLogoClick} isHome={false}/>
         <Container >
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false}/> 
           <TextContainer>

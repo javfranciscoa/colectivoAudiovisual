@@ -34,13 +34,14 @@ export default function Home() {
   const handleLogoClick = () => {
     // Add any specific actions you want to perform when the logo is clicked
     // For now, just close the menu
-    console.log(menuOpen, ' i ran');
     setMenuOpen( prev => !prev)
   };
   const [transparentVideo, changeTransparent] = useState(true)
   const handleClick = () => {
 
   }
+
+  console.log(transparentVideo, 'tr')
 
   return (
     <div>
@@ -52,8 +53,6 @@ export default function Home() {
   
     <main className={styles.myMain}>
     <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
-      <Header transparentVideo={transparentVideo} isHome={true} handleLogoClick={handleLogoClick}/>
-  
       <div className={styles.description}>
         {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.xlarge && <VideoPlayer videoUrl={videoUrl} transparentVideo={transparentVideo} isHome={true}/>  }
        <div className={styles.centeredList}>
@@ -68,6 +67,8 @@ export default function Home() {
        </div>
      
       </div>
+     <Header transparentVideo={transparentVideo} isHome={true} handleLogoClick={handleLogoClick}/>
+  
       <FooterContainer>
       <Footer/>
       </FooterContainer>

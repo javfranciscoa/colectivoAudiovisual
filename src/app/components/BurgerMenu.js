@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 
 var styles = {
   bmBurgerButton: {
