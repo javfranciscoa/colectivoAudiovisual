@@ -3,4 +3,9 @@ export const listOfMovies = [{ title: 'El árbol de navidad', subtitle: 'Ficció
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/4_wrlmcf.jpg',
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/3_yts0zd.jpg',
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/1_lfeinn.jpg'
+  ]}, { title: 'Guardianes de sueños', subtitle: 'Documental', url:'https://res.cloudinary.com/dmfacmfjz/video/upload/v1701179213/vteiek7m2d5ydjcabbek.mp4', link: '/films/projects', direccion: 'Javier Acevedo / Andres Acevedo', info: '2017 / 15’ / Documental / Colombia', sinopsis: 'Natalia desea tener un árbol de navidad en su casa, pero despues de la negativa de su papá ella decide inventarse uno a su estilo.', trayectoria: 'El filminuto hizo parte de una competencia internacional en la cúal quedo en tercer puesto, esta competencia fue realizada por la marca CineD y FujiFilm.', crew: [{ title: 'Escrito y dirigido:', description: 'Joaquín Acevedo, Javier Acevedo' }, { title: 'Productor', description: 'Luis Fernando Matallana'}, { title: 'Diseño de sonido', description: 'Santiago Manzu'}, { title: 'Actuación', description: 'Valeria Morales, Alejandro Morales, Edilberto Rojas, Carmenza'} ,{ title: 'Fotografía', description: 'Javier Acevedo'},{ title: 'Edición', description: 'Joaquín Acevedo, Javier Acevedo'}], carouselImages: [
+    'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/2_mmpeld.jpg',
+    'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/4_wrlmcf.jpg',
+    'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/3_yts0zd.jpg',
+    'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/1_lfeinn.jpg'
   ]}]

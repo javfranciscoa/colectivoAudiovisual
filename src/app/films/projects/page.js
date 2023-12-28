@@ -139,7 +139,14 @@ font-family: ${oswald.style.fontFamily};
 color: black;
 z-index: 4;
 font-size: 20px;
-padding-bottom: 5vh;
+padding-bottom: ${(props) => props.isQuote ? '0' : '10vh'};
+padding-top: ${(props) => props.isQuote ? '0' : '10vh'};
+`
+const TrajectoryText = styled.p`
+font-family: ${oswald.style.fontFamily};
+color: black;
+z-index: 4;
+font-size: 20px;
 `
 
 
@@ -221,6 +228,8 @@ export default function Movie({}) {
     setMenuOpen( prev => !prev)
   };
 
+  console.log(!!listOfMovies[index].quote, 'te')
+
   return (
     <MainContainer>
           <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
@@ -237,10 +246,10 @@ export default function Movie({}) {
           {listOfMovies[index].quote && <QuoteText >{listOfMovies[index].quote}</QuoteText>
           
           }
-          {listOfMovies[index].sinopsis && <SinopsisText >{listOfMovies[index].sinopsis}</SinopsisText>}
+          {listOfMovies[index].sinopsis && <SinopsisText isQuote={!!listOfMovies[index].quote} >{listOfMovies[index].sinopsis}</SinopsisText>}
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false} isDetails={true}/> 
           <QuoteText paddingTop={20} >{'Trayectoria del proyecto'}</QuoteText>
-          {listOfMovies[index].trayectoria && <SinopsisText >{listOfMovies[index].trayectoria}</SinopsisText>}
+          {listOfMovies[index].trayectoria && <TrajectoryText >{listOfMovies[index].trayectoria}</TrajectoryText>}
           {/* <SubtitleText >{'Festivales:'}</SubtitleText> */}
           <QuoteText >{'Ficha técnica'}</QuoteText>
           <CrewContainer>

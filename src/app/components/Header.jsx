@@ -1,4 +1,4 @@
-import React, {forwardRef, useState} from 'react';
+import React, {forwardRef} from 'react';
 import styles from '../Page.module.css'
 import Image from 'next/image'
 import MenuButton from './MenuButton'
@@ -6,6 +6,7 @@ import {breakpoints} from '../utils/breakpoints'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
+
 
 const LogoContainer = styled.div`
 z-index: 10;
