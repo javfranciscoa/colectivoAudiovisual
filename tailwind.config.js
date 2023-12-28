@@ -10,6 +10,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+      'xsm' : {'min': '0px', 'max': '640px'},
       'sm': {'min': '640px', 'max': '767px'},
       'md': {'min': '768px', 'max': '1023px'},
       'lg': {'min': '1024px', 'max': '1279px'},
@@ -18,8 +19,16 @@ module.exports = {
     },
     colors: {
       global: '#F0DBAF',
+      secundary: '#DC8686',
+      white: '#ffffff',
+      yellow: 'bg-gradient-to-r from-amber-200 to-yellow-400'
     },
+    linearGradientColors: theme => theme('colors'),
+    radialGradientColors: theme => theme('colors'),
+    conicGradientColors: theme => theme('colors'),
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-gradients'),
+  ],
 }

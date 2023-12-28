@@ -1,9 +1,9 @@
 'use client'
 import React, {useState} from 'react'
-import { ContactUs } from "../../components/contactus";
 import Footer from '../components/Footer';
 import Header from '../components/Header'
 import BurgerMenu from '../components/BurgerMenu';
+import {OurTeam} from '../../components/our-team'
 
 const Contact = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -21,12 +21,13 @@ const Contact = () => {
       // For now, just close the menu
       setMenuOpen( prev => !prev)
     };
-    return <>
+    return <div className="h-screen flex flex-col relative bg-secundary">
      <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
-    <Header  transparentVideo={true} isHome={false} handleLogoClick={handleLogoClick}/>
-    <ContactUs />
-    <Footer></Footer>
-    </>
+    <Header logoWhite={true} transparentVideo={true} isHome={false} handleLogoClick={handleLogoClick}/>
+    <OurTeam />
+    <Footer isAboutUs={true}></Footer>
+    </div>
+
 }
 
 export default Contact

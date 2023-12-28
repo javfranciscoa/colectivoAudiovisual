@@ -10,7 +10,7 @@ import ImageCarousel from '../../components/ImageCarousel';
 import Footer from '../../components/Footer'
 import { media } from '../../utils/breakpoints'
 import {breakpoints} from '../../utils/breakpoints'
-import BurgerMenu from '@/app/components/BurgerMenu';
+import BurgerMenu from '../../components/BurgerMenu';
 
 
 const Container = styled.div`

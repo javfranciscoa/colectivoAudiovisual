@@ -14,20 +14,20 @@ padding: 10px;
 height: 10vh;
 `
 
-const Footer = () => {
+const Footer = ({isAboutUs = false}) => {
   return (
-    <FooterContainer>
+    <FooterContainer >
       <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
+        <FontAwesomeIcon icon={faFacebook} className={`${isAboutUs ? styles.iconBlack : styles.icon}`} />
       </Link>
       <Link href="https://vimeo.com" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faVimeo} className={styles.icon} />
+        <FontAwesomeIcon icon={faVimeo} className={`${isAboutUs ? styles.iconBlack : styles.icon}`} />
       </Link>
       <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+        <FontAwesomeIcon icon={faInstagram} className={`${isAboutUs ? styles.iconBlack : styles.icon}`} />
       </Link>
       <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
+        <FontAwesomeIcon icon={faYoutube} className={`${isAboutUs ? styles.iconBlack : styles.icon}`} />
       </Link>
     </FooterContainer>
   );

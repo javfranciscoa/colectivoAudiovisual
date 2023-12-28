@@ -5,16 +5,16 @@ import { breakpoints } from '../utils/breakpoints'
 const StyledLinkButton = styled(Link)`
     font-size: 1rem;
     padding-inline: 10px;
-    color: #DC8686;
+    color: ${(props => props.logoWhite ? 'white' : '#DC8686')};
     cursor: pointer;
     z-index: 3;
     display: ${(props) => props.transparentvideo ? 'block' : 'none' };
 `;
 
-const MenuButton = ({ href, text, transparentVideo }) => {
+const MenuButton = ({ href, text, transparentVideo, logoWhite }) => {
     const shouldDissapear = typeof window !== 'undefined' && window.innerWidth > breakpoints.xlarge
   return (
-      <StyledLinkButton href={href} transparentvideo={shouldDissapear ? transparentVideo : true}>{text}</StyledLinkButton>
+      <StyledLinkButton logoWhite={logoWhite} href={href} transparentvideo={shouldDissapear ? transparentVideo : true}>{text}</StyledLinkButton>
   );
 };
 

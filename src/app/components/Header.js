@@ -12,19 +12,20 @@ z-index: 10;
 cursor: pointer;
 `
 
- const Header = forwardRef(({transparentVideo, isHome, handleLogoClick}, ref) => {
+ const Header = forwardRef(({transparentVideo, isHome, handleLogoClick, logoWhite = false}, ref) => {
  
   return (
     <>
     <div ref={ref} className={styles.header}>
       <div onClick={() => typeof window !== 'undefined' ? window.location.href = "/" : null} className={`${!isHome && styles.logo} ${styles.goHome}`}>
-        <Image src={'/logo.png'}  alt={'logo'}  width={200}
-        height={65}></Image>
+        {logoWhite ? <Image src={'/logoWhite.png'}  alt={'logo'}  width={200}
+        height={65}></Image> :<Image src={'/logo.png'}  alt={'logo'}  width={200}
+        height={65}></Image>}
       </div>
       {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.medium ? 
       (<div className={styles.menu}>
-        <MenuButton text={'Nosotros'} href={'/about'} transparentVideo={transparentVideo} />
-        <MenuButton text={'Contacto'} href={'/contact'} transparentVideo={transparentVideo}/>
+        <MenuButton logoWhite={logoWhite} text={'Nosotros'} href={'/about'} transparentVideo={transparentVideo} />
+        <MenuButton logoWhite={logoWhite} text={'Contacto'} href={'/contact'} transparentVideo={transparentVideo}/>
       </div>) : (
       <LogoContainer onClick={handleLogoClick}>
         <FontAwesomeIcon icon={faBars} size="2x" className={styles.logoBurger} />

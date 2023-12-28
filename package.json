@@ -24,9 +24,11 @@
     "react-player": "^2.13.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "tailwindcss-gradients": "^3.0.0"
   },
   "devDependencies": {
+    "@types/node": "20.10.5",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",

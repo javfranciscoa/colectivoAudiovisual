@@ -10,3 +10,15 @@
   .icon:hover {
     color: #DC8686;
   }
+
+  .iconBlack {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    z-index: 11;
+  }
+  
+  .iconBlack:hover {
+    color: black;
+  }

@@ -3,4 +3,4 @@ export const listOfMovies = [{ title: 'El árbol de navidad', subtitle: 'Ficció
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/4_wrlmcf.jpg',
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/3_yts0zd.jpg',
     'https://res.cloudinary.com/dmfacmfjz/image/upload/v1702414465/1_lfeinn.jpg'
-  ]}, { title: 'Guardianes de sueños', subtitle: 'Documental', url:'https://res.cloudinary.com/dmfacmfjz/video/upload/v1701179213/vteiek7m2d5ydjcabbek.mp4', link: '/films/projects'}]
+  ]}]
