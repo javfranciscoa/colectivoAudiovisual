@@ -61,10 +61,10 @@ position: absolute;
 
 left: calc(50% - ${typeof window !== 'undefined' && window?.innerWidth * 0.4}px);
 ${media.extraSmall} {
-  top: 30%;
+  top: 40%;
   }
 ${media.small} {
-  top: 30%;
+  top: 40%;
   }
 ${media.medium} {
   top: 60%;
@@ -233,7 +233,7 @@ export default function Movie({}) {
   return (
     <MainContainer>
           <BurgerMenu handleStateChange={handleStateChange} menuOpen={menuOpen}/>
-        <Header ref={headerSize} transparentVideo={true} handleLogoClick={handleLogoClick} isHome={false}/>
+        <Header ref={headerSize} transparentVideo={true} logoWhite={true} handleLogoClick={handleLogoClick} isHome={false}/>
         <Container >
           <VideoPlayer videoUrl={listOfMovies[index].url} transparentVideo={false} isHome={false}/> 
           <TextContainer>

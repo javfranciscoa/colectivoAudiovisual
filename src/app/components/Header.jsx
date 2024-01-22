@@ -19,8 +19,8 @@ cursor: pointer;
     <>
     <div ref={ref} className={styles.header}>
       <div onClick={() => typeof window !== 'undefined' ? window.location.href = "/" : null} className={`${!isHome && styles.logo} ${styles.goHome}`}>
-        {logoWhite ? <Image src={'/logoWhite.png'}  alt={'logo'}  width={200}
-        height={65}></Image> :<Image src={'/logo.png'}  alt={'logo'}  width={200}
+        {logoWhite ? <Image src={'/logoWhite.png'}  alt={'logo'}  width={300}
+        height={65}></Image> :<Image src={'/logo.png'}  alt={'logo'}  width={300}
         height={65}></Image>}
       </div>
       {typeof window !== 'undefined' && window?.innerWidth >= breakpoints.medium ? 

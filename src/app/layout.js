@@ -5,7 +5,7 @@ import StyledComponentsRegistry from './styled/Layout'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Keios - Colectivo audiovisual',
+  title: 'Visualmente - Colectivo audiovisual',
   description: 'Productora de cine',
 }
 
